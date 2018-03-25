@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[what to learn]]></title>
+    <url>%2F2018%2F03%2F25%2Flearn%E2%80%9D%2F</url>
+    <content type="text"><![CDATA[node.js ES6 新特性 ramda、lodash等工具模块 设计模式 图形库。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[决策树算法(Decision tree)]]></title>
+    <url>%2F2018%2F03%2F24%2F%E5%86%B3%E7%AD%96%E6%A0%91%E7%AE%97%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[决策树是一种类似流程图的树结构，每个内部节点表示在属性上的测试，每个分支代表一个输出，每个树叶节点代表类或类分布。树的最顶层是根节点。 通过对条件(属性列)进行判断而进入不同的分支，从而进行预测。 根据信息熵(entropy)进行信息的度量。通过大量信息进行信息熵的度量，从而获取不确定性]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[cuda环境配置]]></title>
+    <url>%2F2018%2F03%2F23%2Fcuda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[git使用]]></title>
+    <url>%2F2018%2F02%2F05%2Fgit%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[删除远程目录上的文件夹 1234567git rm -r -n --cached */src/\* //-n：加上这个参数，执行命令时，是不会删除任何文件，而是展示此命令要删除的文件列表预览。git rm -r --cached */src/\* //最终执行命令删除文件git commit -m &quot;移除src目录下所有文件的版本控制&quot; //提交git push origin master //提交到远程服务器]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[koa源码解析]]></title>
+    <url>%2F2018%2F01%2F31%2Fkoa%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[视频流源码解析-n_node_版本]]></title>
+    <url>%2F2018%2F01%2F29%2F%E8%A7%86%E9%A2%91%E6%B5%81%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90-n-node-%E7%89%88%E6%9C%AC%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Nuxt与Koa框架学习]]></title>
+    <url>%2F2018%2F01%2F20%2FNuxt%E4%B8%8EKoa%E6%A1%86%E6%9E%B6%E5%AD%A6%E4%B9%A0%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[运维]]></title>
+    <url>%2F2018%2F01%2F20%2F%E8%BF%90%E7%BB%B4%2F</url>
+    <content type="text"><![CDATA[ubuntu 下 mysql 的安装以及远程连接配置 安装 apt-get install mysql-server apt-get install mysql-client sudo apt-get install libmysqlclient-dev 2. 配置远程连接 （1）编辑 mysql 配置文件 nano /etc/mysql/mysql.conf.d/mysqld.cnf （2）找到bind-address这一行，修改监听ip bind-address = 0.0.0.0 （3）修改mysql用户登陆权限 grant all on *.* to root@&apos;%&apos; identified by &apos;123456&apos; with grant option; （4）刷新权限 flush privileges; 3. 修改防火墙端口配置 （1）作死方法 service iptables stop 或者 iptables -P INPUT ACCEPT iptables -P FORWARD ACCEPT iptables -P OUTPUT ACCEPT iptables -F 反正要作死 ：） (2)常规方法 编辑防火墙配置文件 vi /etc/sysconfig/iptables 增加 3306 端口开放， 文件最后添加 -A INPUT -m state --state NEW -m tcp -p tcp --dport 3306 -j ACCEPT 常用知识点 （1）在类unix系统中，监听1024以下的端口需要root权限，且一般情况下不建议直接使用。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[JqueryFileUpload]]></title>
+    <url>%2F2018%2F01%2F05%2FJqueryFileUpload%2F</url>
+    <content type="text"><![CDATA[使用jquery 实现Django 文件上传功能 可以通过文件的 flie 属性获取文件对象的值 使用 js 上传文件 1234567891011121314151617181920212223242526272829303132333435var postData = new FormData(); postData.append("single_select_answer", JSON.stringify(single_select_answer)); postData.append("multi_select_answer", JSON.stringify(multi_select_answer)); postData.append("judge_answer", JSON.stringify(judge_answer)); postData.append("fill_in_answer", JSON.stringify(fill_in_answer)); postData.append("simple_fill_answer", JSON.stringify(simple_fill_answer)); postData.append("discuess_answer", JSON.stringify(discuess_answer)); postData.append("noun_analysis_answer", JSON.stringify(noun_analysis_answer)); postData.append("case_analysis_answer", JSON.stringify(case_analysis_answer)); $.ajax(&#123; url: '/exam/start_exam/'+ '&#123;&#123; Exam.pk &#125;&#125;', type: 'POST', data: postData, cache: false, processData: false, contentType: false, success:function(data)&#123; data = JSON.parse(data); if(data.status === 1)&#123; $.toptip("提交成功", 'success'); window.location.href = '&#123;% url 'exam:index' %&#125;' &#125;else &#123; $.toptip(data.message, 'error'); window.location.href = '&#123;% url 'exam:index' %&#125;' &#125; &#125;, error:function () &#123; $.toptip("服务器异常", 'error'); &#125; &#125;); &#125;, function() &#123; $.toptip("取消提交", 'warning'); &#125;); &#125;);]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[LaughTime]]></title>
+    <url>%2F2017%2F11%2F16%2FLaughTime%2F</url>
+    <content type="text"><![CDATA[如何优雅的吃日式拉面吃拉面，是一定不能掉以轻心的。 首先，进店门的时候，先要看看周围有没有其他人，如果有的话，一定要让他们先进去，不要站在店门口左顾右盼挡着别人，给人添麻烦就不好了。 如果店门口挂着帘子，一定要用右手稍微举过头顶，掀帘子的速度与全身移动的速度一致，注意通过门口以后不要让帘子垂到自己身上，也不要掀到后面的人身上。这是要凭感觉的，据说不回头就做到如此优雅地进门，需要修炼至少2年。如果你进门没进好被老板和其他老食客看到了，他们心里是会耻笑你的。 ​ 所以，进门以后一定要谦逊，不要一开始就与老板对视。老板或者店员一般会先问你几个人，这时因为店内嘈杂，一定要举起右手，比划出人数，面带谦卑的微笑并轻微地把脖子前倾。如果店内较空，店主或店员一般会叫你随便坐，这时千万不要随便坐，一定要找最里面的位子或者角落上的位子，拉凳子时一定要轻，坐下后不要东张西望。 ​ 看菜单不要超过半分钟，最好在店员上水的时候就决定好，并且吐字清楚地说出自己要点的东西。点菜时向店员也一定要坐着半鞠躬以示敬意。然后就是吃面了。 ​ 首先，要用左手把勺子拿起来，轻轻放入汤里，逆时针沿碗边搅动大概10分之一圈，然后双手合十以42分贝的声音说一声“我要开动了”，再确认店主和店员眼神没有异样后，拿勺子先喝一小口汤，最好不要吹，忍住烫。 ​ 之后，用右手拿起筷子，搅动碗里的东西，注意不要让汤水的起伏幅度离碗沿距离小于9mm，挑起的面条不宜超过24根，不宜少于12根，这时可以吹一下，但是气流一定要保持是从上至下的，否则可能打乱面条里的禅意。 ​ 吃的时候，注意吸面的声音维持在25-28分贝之间，一次吸面的时间大约在0.6-2.3秒之间。 ​ 面上的肉不要一口一片，而是第一次三分之二片，第二次剩下的三分之一片，第三次再三分之二片，这样的次序吃，且每两次吃肉之间必须至少吃两口面。并且，吃完最后一口肉之后应还有五-七口面可以吃为佳。 拉面是一种讲究侘び寂び的东西，所以如果觉得淡了千万不可以对此做任何事情。职人先生调出来的味道是不可能会有错的，一定是你的味蕾处了问题。但是，带着坏掉的味蕾来吃面本身就是一种亵渎，所以建议千万不要表现出味道不对的样子。 ​ 虽然桌子上会放辣椒粉之类的东西，但是不要动，那只是一种对面条的尊敬的形式罢了。 ​ 但是大蒜是可以加的。用压蒜器挤蒜蓉时，一定要注意握力的把握，蒜蓉的体积不要超过0.4立方厘米。吃一口带蒜的面以后，一定要和邻座的人交换口气，以确认自己吃的量是否精确。 ​ 据说吃完蒜后呼出的口气要臭到恰到好处，需要至少修炼3年8个月。吃完以后，剩在碗里的面汤应该不多于150毫升、不少于20毫升。如果吃面的同时汤就喝完了，或者吃完了面汤还有不少，你下次就不要再来这家店了。不光是你，和你有关系的人都将没有资格来这家店。一定要切记！最后便是结账。 ​ 给钱的时候，一定要先给店员数一遍，不超过1000日元的时候，要作出谦卑的表情，表示自己作为凡人实在没有能力品尝更多大师的努力成果。超过1000日元的时候，硬币一定要选6成-8成新之间的，硬币枚数不要超过6枚。不要问为什么，这就是ザ・こだわり（规矩）。 ​ 接受找钱的时候，一定要双手捧住硬币，然后攥在手心，直到走出门以后再装入钱包中。 ​ 通过门帘时，这次要用左手掀起门帘，因为你的右手被用于抓硬币了。这次一样要记得不要把门帘掀到后面人脸上。如果你自己走在别人后面，请一定紧跟其后，中间留有空隙的话是会给人添麻烦的。这是别人掀起门帘，请迅速甩头躲闪，但注意幅度不要超过30度。进门的修炼需要2年，这出门的修炼则需要4年。 ​ 走出店门，抬头看一眼日本的万里晴空，回想一下偷瞥到的大师的身姿，你便会感慨：这就是日本，这个以“和”为精神的伟大国度的国民美食，品味到了真实要感谢八百万神呢。 ​ 然后怀着一颗谦卑的心离开。 ​ 摘自知乎]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[常用算法总结]]></title>
+    <url>%2F2017%2F11%2F06%2F%E7%AE%97%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[常用算法总结1. 快速排序法​ 快速排序法是对一组无序序列进行分治排序的策略，以大化小，逐渐整理序列的大小顺序，从而实现排序效果。如对一组序列进行排序 `2 8 7 1 3 5 6 4` ​ 首先从左到右选择基准，例如第一次选择的数字为2，则将小于2的数字向左拍，大于2的数字向右排，只考虑与2比较的结果，第一次排序后得到 `2 1 # 8 7 3 5 6 4` ​ 紧接着从基准分界线处，分别选择新的基准进行排序，左边基准为2，右边基准为8，这里最初的边界由 # 划分，再次得到结果 ​ 1 # 2 # 7 3 5 6 4 # 8 ​ 第三次继续在 # 两侧选择基准进行划分，得到 ​ 1 # 2 # 3 5 6 4 # 7 # 8 ​ 重复上述过程，直到划分的界限元素个数为1个的时候停止，逐个筛选，最终实现排序 ​ 在云栖社区上看到了一张让人印象深刻的动态图： ​]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Django]]></title>
+    <url>%2F2017%2F11%2F05%2FDjango%2F</url>
+    <content type="text"><![CDATA[Django 知识点总结 删除cookie和session 1. 删除 session &gt; del req.session[&apos;session_key&apos;] 2. 删除 cookie &gt; response.delete_cookie(&quot;cookie_key&quot;) 模板渲染处理日期格式 1. django 日期格式化 {{ datetime | date:"Y-M-D"}} a &apos;a.m.&apos; 或 &apos;p.m.&apos; (注意,它与PHP 的输出略有不同.它包括了句点(django扩展). &apos;a.m.&apos; A &apos;AM&apos; 或 &apos;PM&apos;. &apos;AM&apos; B 未实现. d 每月第几天, 带前导零 &apos;01&apos; to &apos;31&apos; D 每周第几天,3字母的字符串. &apos;Fri&apos; f 时间, 12-小时制的小时和分钟数, 如果分钟数为零,则不显示.(django 扩展). &apos;1&apos;, &apos;1:30&apos; F 月份, 长文本格式. &apos;January&apos; g 小时, 12-小时制,没有前导零 &apos;1&apos; to &apos;12&apos; G 小时, 24-小时制,没有前导零 &apos;0&apos; to &apos;23&apos; h 小时, 12-小时制,有前导零 &apos;01&apos; to &apos;12&apos; H 小时, 24-小时制,有前导零 &apos;00&apos; to &apos;23&apos; i 分钟. &apos;00&apos; to &apos;59&apos; I 未实现 j 每月第几天, 无前导零 &apos;1&apos; to &apos;31&apos; l 每周第几天,长文本格式. &apos;Friday&apos; L 是否闰年. True or False m 数字表示的月份,有前导零. &apos;01&apos; to &apos;12&apos; M 月份,3字母短文本格式. &apos;Jan&apos; n 数字表示的月份,无前导零 &apos;1&apos; to &apos;12&apos; N 出版风格的月份缩写(django 扩展) &apos;Jan.&apos;, &apos;Feb.&apos;, &apos;March&apos;, &apos;May&apos; O 与格林威治的时间差(以小时计) &apos;+0200&apos; P 12小时制的小时分钟及&apos;a.m.&apos;/&apos;p.m.&apos; 分钟数若为零则不显示. 用字符串表示特殊 的时间点, 如 &apos;midnight&apos; 和 &apos;noon&apos; (django扩展) &apos;1 a.m.&apos;, &apos;1:30 p.m.&apos;, &apos;midnight&apos;,&apos;noon&apos;, &apos;12:30 p.m.&apos; r RFC 822 格式的日期 . &apos;Thu, 21 Dec 2000 16:01:07+0200&apos; s 秒数, 带有前导零的数字表示 &apos;00&apos; to &apos;59&apos; S 英语序数后缀,用于一个月的第几天,2个字符 &apos;st&apos;, &apos;nd&apos;, &apos;rd&apos; or &apos;th&apos; t 给定月共有多少天. 28 to 31 T 本机时区. &apos;EST&apos;, &apos;MDT&apos; U 未实现 w 一周中的第几天,没有前导零的数字 &apos;0&apos; (Sunday) to &apos;6&apos; (Saturday) W ISO-8601 一年的第多少星期数, 一周从 星期一开始 1, 23 y Year, 2 位数字表示 &apos;99&apos; Y Year, 4 位数字表示 &apos;1999&apos; z 一年中的第几天 . 0 to 365 Z 以秒计的时区偏移量. 这个偏移量对UTC西部 时区总是负数,而对UTC东部时区则总是正数 -43200 to 43200]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[JavaScript]]></title>
+    <url>%2F2017%2F11%2F05%2FJavaScript%2F</url>
+    <content type="text"><![CDATA[#JavaScript 知识点总结 var foo = function (){} 与 function foo (){} 的区别 这个问题涉及到了 JavaScript 编译时提前的问题，在此引用了[知乎][https://www.zhihu.com/question/19878052]上的一篇文章JavaScript在编译时候会对代码做 “提前” （hoist）编译的处理 于是就会产生一些意外的效果 对于 ： 1var funtion_name = function() &#123;&#125; 而言，function_name 的声明会被提前，而函数的具体定义则不会被提前编译，仅在调用的时候初始化但是赋值号（=）后面的内同不会被提前，匿名函数只会在调用的时候被初始化。 而对于 1function function_name() &#123;&#125; 函数体的声明过程在整个程序执行之前就会被处理，只要位于同一个作用域下，就可以直接访问到，同样也可以在声明之前调用 例如： 12345678910111213function sayOne()&#123; conso.log("one");&#125;sayOne(); //OutPut : towfunction sayOne()&#123; conso.log("two");&#125; 编译器在处理时会首先对函数本身进行初始化，然而后定义的函数会覆盖掉先前的定义，相当于编译的过程为： 12345678910111213function sayOne()&#123; console.log("one");&#125;function sayOne()&#123; console.log("two");&#125;sayOne(); 这种情况可以理解为声明导致的执行顺序提升，仅有函数声明会被提升，函数表达式则不会 Date() 对象 12345let MyDate = new Date()myDate.getHours(); //获取当前小时数(0-23)myDate.getMinutes(); //获取当前分钟数(0-59) 3.this的指向问题 ​ 考虑如下的代码段 1234567891011121314151617function foo()&#123; console.log( this.bar ) &#125; var bar = 'global' var obj1 = &#123; bar: "obj1" foo: foo &#125; var obj2 = &#123; bar: "obj2" &#125; foo() obj1.foo() foo.call(obj2) new foo() ​ 最后四次调用的输出值可以根据foo函数调用时的域来判断，求解的关键要找出 this 指向的 object ，此时可以将整个区域当作是一个 object 内部类似于 1234567891011121314151617181920&#123; function foo()&#123; console.log( this.bar ) &#125; var bar = &apos;global&apos; var obj1 = &#123; bar: &quot;obj1&quot; foo: foo &#125; var obj2 = &#123; bar: &quot;obj2&quot; &#125; foo() obj1.foo() foo.call(obj2) new foo()&#125; ​ 这样可以理解直接调用foo时候的this指向全局object， 于是结果为 global , 第二此调用时候foo在obj1内部，于是this的指向变为 obj1 内部,则输出结果为obj1，对于 call ，apply ，bind 而言，这三个函数都是用来重新定义this的指向的，于是 foo.call(obj2) 的结果变成了在obj2内部调用foo函数，输出结果为obj2，然而对于new 的情况，foo并没有显式或隐式的绑定任何一个对象，所以foo输出值为undefined（其实这里this并不为undefined，但是没有任何关于bar的定义，所以结果为undefined） 4.正则表达式 ​ （1）.正则表达式格式 1/正则表达式主体/修饰符（可选） ​ （2）字符串正则方法 12str.search()str.replace() ​ (3)正则表达式方法（RegExp Object） 123let reg = /test/reg.test("string") // 判断字符中是否满足正则条件reg.exec("string") //输出满足正则匹配的字符 ​]]></content>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Node.js常用知识点]]></title>
+    <url>%2F2017%2F10%2F23%2FNode-js%E5%B8%B8%E7%94%A8%E7%9F%A5%E8%AF%86%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[Node.JS 常用知识点总结 常用第三方 1. bodyParser :解析POST请求 2. cookies :操作 cookie 3. swing :模板解析引擎 4. mongoose :操作 mongoDB 5. markdown :解析 MarkDown nodejs 项目文件目录 db ：数据库存储 models ：数据库模型文件 schemas ：数据库结构文件目录 views ：模板视图文件目录 app.js ：应用入口文件 public ：公共文件目录7.routers ：路由目录 app.js 内容 模块的划分app.use(‘route’,function) 登陆 moongoDB 如果数据库开启了验证机制，则在连接时需要提供验证 mongoose.connect(“mongodb://root:123456@123.207.72.192:27017/Nodejs?authSource=admin” ,function(err){}); 这里的 err 中包含了 连接错误的信息，对于admin以外的数据库，需要指明用户登陆验证所使用的数据库，即 ?authSource=admin]]></content>
+      <tags>
+        <tag>Nodejs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MongoDB知识点]]></title>
+    <url>%2F2017%2F10%2F23%2FMongoDB%E7%9F%A5%E8%AF%86%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[MongoDB 知识点总结 安装数据库 apt-get install mongodb 配置远程登陆 默认的 mongod 命令为启动 mongodb 的命令， 但是在启动时不会加载config 文件 mongod -f /etc/mongo.conf 可以强制使用mongo的conf文件 配置远程连接的配置如下 1. 使用 mongod 启动本地mongodb数据库 &gt; mongod 2. 使用mongo 链接本地数据库，不加载配置文件的情况下默认不需要验证权限 &gt; mongo 127.0.0.1:27017 mongodb的默认端口为27017 3. 增加user &gt; use admin &gt; db.addUser(&apos;root&apos;, &apos;123456&apos;); &gt;exit 4. 更改配置文件内容 bind_ip = 127.0.0.1 将此句话注释，则为监听所有ip &gt; #bind_ip = 127.0.0.1 增加登陆验证 &gt;auth = true 5. 开放相应防火墙端口 &gt; iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 27017 -j ACCEPT 5. 重启数据库 &gt; mongod -f /etc/mongo.conf 图形化管理工具 MongoVUE bing上有不少破解资源]]></content>
+      <tags>
+        <tag>MongoDB</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MachineLearning]]></title>
+    <url>%2F2017%2F10%2F21%2FMachineLearning%2F</url>
+    <content type="text"><![CDATA[TensorFlow机器学习应用 首先获得数据源 x_data = np.linspace(-1, 1, 300)[:, np.newaxis] # 制造300 个（-1，1 的点） nosie = np.random.normal(0, 0.05, x_data.shape) # 制造数据噪声，获得分散点 y_data = np.square(x_data) - 0.5 + nosie # 求平方 创建神经层构造函数 def add_layer(inputs, insize, outsize, n_layer,activation_function): # 定义神经层输入输出维度以及激励函数 layer_name = &apos;layers%s&apos; % n_layer with tf.name_scope(layer_name): with tf.name_scope(&apos;weights&apos;): Weights= tf.Variable(tf.random_normal([insize,outsize])) # 定义初始权重为随机值矩阵 tf.summary.histogram(layer_name+&apos;/weights&apos;, Weights) # 这里只是做数据流记录 with tf.name_scope(&apos;biases&apos;): biasis = tf.Variable(tf.zeros([1, outsize]) + 0.1) # 定义偏置量，初始偏置矩阵为全部0 ，每次迭代基础上增加0.1 tf.summary.histogram(layer_name+&apos;/biases&apos;, biasis) with tf.name_scope(&apos;Wx_plus_b&apos;): Wx_plus_b = tf.matmul(inputs, Weights) + biasis # 权重乘以输入变量 加上偏置量 以加快逼近 if activation_function is None: # 若没有输出函数，则证明还不需要继续进入神经层迭代 输出结果 outputs = Wx_plus_b else: outputs = activation_function(Wx_plus_b) # 若有定义输出函数，则根据输出函数处理数据，继续迭代 tf.summary.histogram(layer_name+&apos;/output&apos;, outputs) return outputs 创建两层网络结构 lay1 = add_layer(xs, 1, 10, n_layer=1, activation_function=tf.nn.relu) # 这里的relu为一种线性激励函数 prediction = add_layer(lay1, 10, 1, n_layer=2, activation_function=None) # 输出层定义 定义损失函数 loss = tf.reduce_mean(tf.reduce_sum(tf.square(ys - prediction), reduction_indices=[1]))# 检测方差 reduce_mean 求平均值 开始训练 train_step = tf.train.GradientDescentOptimizer(0.1).minimize(loss) # 训练算法为梯度下降算法，学习速率初始值为0.1 ，根据损失函数值动态调整 初始化所有程序所需变量，开始迭代并画图 init = tf.initialize_all_variables() with tf.Session() as sess: merged = tf.summary.merge_all() writer = tf.summary.FileWriter(&apos;sum&apos;, sess.graph) sess.run(init) fig = plt.figure() ax = fig.add_subplot(1, 1, 1) ax.scatter(x_data, y_data) plt.ion() # show 的时候不暂停 plt.show() for i in range(1000): sess.run(train_step, feed_dict={xs: x_data, ys: y_data}) # 输入随机生成的数据点 if i % 50: print(sess.run(loss, feed_dict={xs: x_data, ys: y_data})) result = sess.run(merged,feed_dict={xs: x_data, ys: y_data}) writer.add_summary(result,i) try: ax.lines.remove(lines[0]) except Exception: pass prediction_value = sess.run(prediction, feed_dict={xs:x_data}) lines = ax.plot(x_data,prediction_value, &apos;r-&apos;, lw=5) plt.pause(0.01) 结果图片如下]]></content>
+      <tags>
+        <tag>TensorFlow</tag>
+      </tags>
+  </entry>
+</search>
